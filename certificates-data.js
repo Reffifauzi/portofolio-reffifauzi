@@ -40,6 +40,16 @@ const certificatesData = [
     description: "Berpartisipasi aktif sebagai anggota tim dalam Program Kreativitas Mahasiswa (PKM) Tahun 2025 yang diselenggarakan oleh Bagian Kemahasiswaan UBP Karawang bekerja sama dengan Direktorat Pembelajaran dan Kemahasiswaan (BELMAWA) Kemdiktisaintek RI."
   },
   {
+    id: "panitia-himatif-2025",
+    title: "Panitia Seminar Nasional HIMATIF 2025",
+    issuer: "Fakultas Ilmu Komputer Universitas Buana Perjuangan Karawang",
+    date: "Oktober 2025",
+    credentialUrl: "",
+    file: "images/panitia-himatif-2025.pdf",
+    image: "images/panitia-himatif-2025.jpg",
+    description: "Surat Tugas Dekan Fakultas Ilmu Komputer UBP Karawang (No: 1560/D/U/X/2025). Terlibat sebagai anggota panitia Sie Peralatan dalam kegiatan Seminar Nasional HIMATIF 2025 dengan tema 'Masa Depan Ngoding di Era AI: Ancaman atau Peluang?', berpartisipasi aktif dalam manajemen logistik dan teknis demi kelancaran pelaksanaan seminar nasional."
+  },
+  {
     id: "huawei-ai-tech-apps",
     title: "Artificial Intelligence Technology and Applications",
     issuer: "Huawei ICT Academy (华为ICT学院)",

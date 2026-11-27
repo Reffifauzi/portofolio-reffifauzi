@@ -9,11 +9,44 @@ let projectModalInstance = null;
 let certModalInstance = null;
 
 document.addEventListener('DOMContentLoaded', () => {
+  initTheme();
   renderProjects();
   renderCertificates();
   initNavigation();
   initContactForm();
 });
+
+/**
+ * Pengaturan Mode Malam (Dark) dan Terang (Light)
+ */
+function initTheme() {
+  const savedTheme = localStorage.getItem('reffi_theme') || 'dark';
+  applyTheme(savedTheme);
+
+  const toggleBtn = document.getElementById('themeToggleBtn');
+  if (toggleBtn) {
+    toggleBtn.addEventListener('click', () => {
+      const currentTheme = document.documentElement.getAttribute('data-bs-theme') || 'dark';
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      applyTheme(newTheme);
+      localStorage.setItem('reffi_theme', newTheme);
+    });
+  }
+}
+
+function applyTheme(theme) {
+  document.documentElement.setAttribute('data-bs-theme', theme);
+  document.documentElement.setAttribute('data-theme', theme);
+
+  const icon = document.getElementById('themeToggleIcon');
+  if (icon) {
+    if (theme === 'light') {
+      icon.className = 'bi bi-sun-fill text-warning';
+    } else {
+      icon.className = 'bi bi-moon-stars';
+    }
+  }
+}
 
 /**
  * Render Project Cards ke dalam Grid Editorial

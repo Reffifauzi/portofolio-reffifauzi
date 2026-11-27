@@ -13,7 +13,16 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
 
   <!-- Minimalist Editorial Custom Stylesheet -->
-  <link rel="stylesheet" href="style.css?v=4.9">
+  <link rel="stylesheet" href="style.css?v=5.2">
+
+  <!-- Anti-flash Theme Init -->
+  <script>
+    (function () {
+      const savedTheme = localStorage.getItem('reffi_theme') || 'dark';
+      document.documentElement.setAttribute('data-bs-theme', savedTheme);
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    })();
+  </script>
 </head>
 
 <body>
@@ -40,8 +49,12 @@
         <a href="#kontak" class="nav-link-item">Kontak</a>
       </nav>
 
-      <!-- Quick Action / CTA -->
+      <!-- Quick Action / CTA & Theme Toggle -->
       <div class="d-flex align-items-center gap-2">
+        <button id="themeToggleBtn" class="btn-theme-toggle" type="button" aria-label="Ganti Mode Gelap/Terang"
+          title="Ganti Mode Gelap/Terang">
+          <i class="bi bi-moon-stars" id="themeToggleIcon"></i>
+        </button>
         <a href="#kontak" class="btn-editorial-primary d-none d-sm-inline-flex">
           <i class="bi bi-chat-text"></i> Hubungi
         </a>
@@ -67,7 +80,7 @@
     <!-- HERO SECTION -->
     <section class="hero-section">
       <div class="row align-items-center g-4">
-        <div class="col-12 col-lg-8">
+        <div class="col-12 col-lg-7">
           <!-- Status & Location Meta -->
           <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
             <div class="status-pill mb-0">
@@ -85,26 +98,42 @@
             efisien, dan scalable.
           </h1>
 
-          <!-- Editorial Lead -->
+
           <p class="hero-subtitle mb-3">
-            Halo, saya <strong>Reffi Fauzi</strong>, Sarjana Teknik Informatika (IPK 3.63). Terbiasa merancang dan
-            membangun aplikasi web <em>end-to-end</em> — mulai dari arsitektur backend, manajemen database, dan
-            integrasi RESTful API yang efisien, hingga pengembangan antarmuka pengguna yang responsif.
+            Berfokus membangun produk digital yang fungsional, responsif, dan intuitif
+            melalui perpaduan teknologi, desain, serta pemecahan masalah.
+            Mengembangkan solusi web yang tidak hanya bekerja dengan baik,
+            tetapi juga memberikan pengalaman terbaik dan nilai nyata bagi pengguna.
+          </p>
+
+          <p class="hero-tagline">
+            <strong>Merancang solusi. Membangun inovasi. Menciptakan dampak.</strong>
           </p>
 
           <!-- Core Tech Stack Bar (Quick Scan for Recruiter) -->
+
+          <!-- Core Tech Stack Bar (Quick Scan for Recruiter) -->
           <div class="hero-tech-stack mb-4">
-            <span class="hero-tech-label"><i class="bi bi-stack me-1"></i>STACK UTAMA:</span>
+            <span class="hero-tech-label">
+              <i class="bi bi-stack me-1"></i>STACK UTAMA:
+            </span>
             <div class="d-inline-flex flex-wrap gap-2 align-items-center">
               <span class="tech-pill tech-pill-highlight">Laravel</span>
               <span class="tech-pill tech-pill-highlight">PHP</span>
               <span class="tech-pill tech-pill-highlight">MySQL</span>
-              <span class="tech-pill tech-pill-highlight">RESTful API</span>
+              <span class="tech-pill tech-pill-highlight">REST API</span>
               <span class="tech-pill">JavaScript</span>
+              <span class="tech-pill">HTML5</span>
+              <span class="tech-pill">CSS3</span>
               <span class="tech-pill">Bootstrap 5</span>
               <span class="tech-pill">Python</span>
+              <span class="tech-pill">Flask</span>
+              <span class="tech-pill">StarUML</span>
+              <span class="tech-pill">Git</span>
+              <span class="tech-pill">GitHub</span>
             </div>
           </div>
+
 
           <!-- Action Buttons -->
           <div class="d-flex flex-wrap align-items-center gap-3 mb-4">
@@ -147,9 +176,72 @@
           </div>
         </div>
 
-        <div class="col-12 col-lg-4 d-flex justify-content-center justify-content-lg-end">
-          <div class="hero-avatar-box">
-            <img src="images/reffi.png" alt="Reffi Fauzi" onerror="this.src='reffi.png'">
+        <!-- Profile Hero Card (Right Column) -->
+        <div class="col-12 col-lg-5 d-flex justify-content-center justify-content-lg-end">
+          <div class="hero-profile-card">
+            <!-- Topbar -->
+            <div class="hpc-topbar">
+              <div class="hpc-status-pill">
+                <span class="hpc-status-dot"></span>
+                <span>PROFILE OVERVIEW</span>
+              </div>
+              <span class="hpc-domain">reffifauzi.dev</span>
+            </div>
+
+            <!-- Profile Info Row -->
+            <div class="hpc-profile-row">
+              <img src="images/reffi.png" alt="Reffi Fauzi" class="hpc-avatar" onerror="this.src='reffi.png'">
+              <div class="hpc-profile-info">
+                <h3 class="hpc-name">REFFI FAUZI</h3>
+                <div class="hpc-education">S1 Teknik Informatika</div>
+                <div class="hpc-submeta">IPK 3.63 · Karawang</div>
+              </div>
+            </div>
+
+            <!-- Meta List Box -->
+            <div class="hpc-meta-box">
+              <div class="hpc-meta-item">
+                <span class="hpc-meta-label">Status Kerja</span>
+                <span class="hpc-meta-value highlight-green">Siap Bekerja</span>
+              </div>
+              <div class="hpc-meta-item">
+                <span class="hpc-meta-label">Pendidikan</span>
+                <span class="hpc-meta-value">S1 Informatika</span>
+              </div>
+              <div class="hpc-meta-item">
+                <span class="hpc-meta-label">Spesialisasi</span>
+                <span class="hpc-meta-value">Full-Stack Developer</span>
+              </div>
+              <div class="hpc-meta-item">
+                <span class="hpc-meta-label">Pengalaman</span>
+                <span class="hpc-meta-value">Web Developer Intern</span>
+              </div>
+            </div>
+
+            <!-- Stats Row (Disesuaikan agar tidak duplikasi IPK) -->
+            <div class="hpc-stats-row">
+              <div class="hpc-stat-card">
+                <div class="hpc-stat-val">6+</div>
+                <div class="hpc-stat-sub">Project Development</div>
+              </div>
+              <div class="hpc-stat-card">
+                <div class="hpc-stat-val stat-green">S1</div>
+                <div class="hpc-stat-sub">Teknik Informatika</div>
+              </div>
+            </div>
+
+            <!-- Core Technologies -->
+            <div class="hpc-tech-label">CORE TECHNOLOGIES</div>
+            <div class="hpc-tech-chips">
+              <span class="hpc-chip">Laravel</span>
+              <span class="hpc-chip">PHP</span>
+              <span class="hpc-chip">MySQL</span>
+              <span class="hpc-chip">JavaScript</span>
+              <span class="hpc-chip">Python</span>
+              <span class="hpc-chip">Flask</span>
+              <span class="hpc-chip">REST API</span>
+              <span class="hpc-chip">StarUML</span>
+            </div>
           </div>
         </div>
       </div>
@@ -165,16 +257,28 @@
         <!-- Profil Deskripsi -->
         <div class="col-12 col-lg-7">
           <div class="editorial-card h-100">
+
             <h5 class="fw-bold text-dark mb-3">Tentang Saya</h5>
+
             <p class="text-secondary lh-base mb-3">
-              Saya merupakan lulusan S1 Teknik Informatika dari <strong>Universitas Buana Perjuangan Karawang</strong>
-              dengan minat mendalam pada rekayasa perangkat lunak web (<em>Full-Stack Web Development</em>), manajemen
-              basis data relasional, dan eksplorasi data analitik.
+              Saya merupakan lulusan S1 Teknik Informatika dari
+              <strong>Universitas Buana Perjuangan Karawang</strong> dengan IPK 3.63.
+              Memiliki ketertarikan pada pengembangan perangkat lunak,
+              khususnya <em>Full-Stack Web Development</em>, perancangan sistem,
+              serta pengolahan dan analisis data. Saya senang mempelajari
+              teknologi baru dan mengembangkan solusi digital yang sesuai
+              dengan kebutuhan pengguna.
             </p>
+
             <p class="text-secondary lh-base mb-4">
-              Memiliki bekal pengalaman langsung dalam industri melalui magang pengembangan aplikasi web dengan
-              ekosistem Laravel dan MySQL. Biasa berkolaborasi dalam tim, terbiasa dengan siklus perancangan basis data
-              relasi, pembuatan REST API, hingga implementasi antarmuka yang ramah pengguna.
+              Memiliki pengalaman magang sebagai Web Developer serta mengembangkan
+              berbagai proyek aplikasi berbasis web dan mobile menggunakan Laravel,
+              PHP, Python, MySQL, dan Flask. Terbiasa menangani pengembangan
+              frontend dan backend, pengelolaan basis data, integrasi REST API,
+              perancangan UI/UX, serta pemodelan sistem menggunakan StarUML.
+              Selain itu, memiliki pengalaman dalam pengujian dan debugging aplikasi,
+              analisis kebutuhan sistem, serta bekerja sama dalam proses
+              pengembangan perangkat lunak.
             </p>
 
             <div class="d-flex flex-wrap gap-2 pt-2 border-top border-secondary-subtle">
@@ -216,6 +320,8 @@
 
 
     <!-- 2. PENGALAMAN KERJA / MAGANG -->
+
+    <!-- 2. PENGALAMAN KERJA / MAGANG -->
     <section id="pengalaman" class="section-wrapper">
       <div class="section-eyebrow">02 / Pengalaman</div>
       <h2 class="section-heading">Pengalaman Magang</h2>
@@ -223,37 +329,70 @@
       <div class="editorial-card">
         <div class="timeline-item">
           <div class="timeline-dot"></div>
+
           <div class="timeline-date">Oktober 2024 — Maret 2025</div>
           <div class="timeline-role">Web Developer Intern</div>
-          <div class="timeline-company">PT Cakrawala Global Yaksa</div>
+          <div class="timeline-company">
+            PT Cakrawala Global Yaksa — Karawang, Jawa Barat
+          </div>
 
           <p class="text-secondary small mb-3">
-            Bertanggung jawab dalam perancangan dan pengembangan aplikasi manajemen laundry berbasis web untuk
-            meningkatkan efisiensi operasional dan pencatatan transaksi perusahaan.
+            Terlibat dalam pengembangan aplikasi berbasis web, mulai dari
+            identifikasi kebutuhan pengguna, perancangan sistem, pengembangan
+            fitur, pengelolaan basis data, hingga pengujian aplikasi.
+            Bekerja sama dengan pembimbing dan tim untuk memastikan
+            pengembangan aplikasi berjalan sesuai kebutuhan sistem.
           </p>
 
-          <h6 class="fw-semibold text-dark small text-uppercase mb-2 font-monospace">Tanggung Jawab &amp; Kontribusi:
+          <h6 class="fw-semibold text-dark small text-uppercase mb-2 font-monospace">
+            Tanggung Jawab &amp; Kontribusi:
           </h6>
+
           <ul class="clean-list">
-            <li>Mengembangkan arsitektur aplikasi manajemen laundry berbasis web menggunakan framework Laravel dan PHP.
+            <li>
+              Mengembangkan dan menyesuaikan fitur aplikasi berbasis web
+              menggunakan Laravel, PHP, MySQL, HTML, CSS, JavaScript,
+              dan Bootstrap sesuai kebutuhan sistem.
             </li>
-            <li>Merancang antarmuka pengguna yang responsif dengan prinsip UI/UX yang mempermudah staf kasir &amp;
-              operasional.</li>
-            <li>Merancang skema dan relasi basis data MySQL untuk menjamin integritas data transaksi dan pelanggan.</li>
-            <li>Melakukan debugging terstruktur, error handling, dan pengujian alur fungsional sistem.</li>
-            <li>Berkolaborasi aktif dengan mentor industri dalam penyesuaian kebutuhan fitur bisnis.</li>
+            <li>
+              Mengidentifikasi kebutuhan pengguna serta merancang
+              tampilan UI/UX dan alur kerja aplikasi.
+            </li>
+            <li>
+              Mengelola basis data MySQL serta melakukan penyesuaian
+              struktur dan data sesuai kebutuhan aplikasi.
+            </li>
+            <li>
+              Melakukan pengujian fungsional, mengidentifikasi bug,
+              dan melakukan debugging untuk memastikan fitur berjalan
+              sesuai fungsinya.
+            </li>
+            <li>
+              Membuat dokumentasi teknis dan pemodelan sistem menggunakan
+              StarUML, meliputi Use Case Diagram, Activity Diagram,
+              dan Sequence Diagram.
+            </li>
+            <li>
+              Berkoordinasi dengan pembimbing dan tim dalam proses
+              pengembangan, pengujian, serta penyusunan laporan
+              kemajuan aplikasi.
+            </li>
           </ul>
 
           <div class="d-flex flex-wrap gap-2 pt-2">
             <span class="tech-pill">Laravel</span>
             <span class="tech-pill">PHP</span>
             <span class="tech-pill">MySQL</span>
-            <span class="tech-pill">Bootstrap</span>
+            <span class="tech-pill">HTML</span>
+            <span class="tech-pill">CSS</span>
             <span class="tech-pill">JavaScript</span>
+            <span class="tech-pill">Bootstrap</span>
+            <span class="tech-pill">StarUML</span>
           </div>
         </div>
       </div>
     </section>
+
 
 
     <!-- 3. RIWAYAT PROYEK -->
@@ -518,7 +657,79 @@
             </div>
           </div>
         </div>
+
+
+        <!-- System Analysis, Design & Testing -->
+        <div class="col-12 col-lg-6">
+          <div class="skill-competency-card">
+
+            <div class="skill-competency-header">
+              <h3 class="skill-competency-title">
+                <i class="bi bi-diagram-3 text-info me-2"></i>
+                System Analysis, Design &amp; Testing
+              </h3>
+              <span class="skill-competency-count">5 Items</span>
+            </div>
+
+            <div class="skill-items-list">
+
+              <div class="skill-progress-item">
+                <div class="skill-progress-info">
+                  <span class="skill-name">StarUML</span>
+                  <span class="skill-percent">85%</span>
+                </div>
+                <div class="skill-progress-track">
+                  <div class="skill-progress-bar" style="width: 85%;"></div>
+                </div>
+              </div>
+
+              <div class="skill-progress-item">
+                <div class="skill-progress-info">
+                  <span class="skill-name">UML Modeling</span>
+                  <span class="skill-percent">85%</span>
+                </div>
+                <div class="skill-progress-track">
+                  <div class="skill-progress-bar" style="width: 85%;"></div>
+                </div>
+              </div>
+
+              <div class="skill-progress-item">
+                <div class="skill-progress-info">
+                  <span class="skill-name">Functional Testing</span>
+                  <span class="skill-percent">85%</span>
+                </div>
+                <div class="skill-progress-track">
+                  <div class="skill-progress-bar" style="width: 85%;"></div>
+                </div>
+              </div>
+
+              <div class="skill-progress-item">
+                <div class="skill-progress-info">
+                  <span class="skill-name">Debugging &amp; Troubleshooting</span>
+                  <span class="skill-percent">85%</span>
+                </div>
+                <div class="skill-progress-track">
+                  <div class="skill-progress-bar" style="width: 85%;"></div>
+                </div>
+              </div>
+
+              <div class="skill-progress-item">
+                <div class="skill-progress-info">
+                  <span class="skill-name">Technical Documentation</span>
+                  <span class="skill-percent">80%</span>
+                </div>
+                <div class="skill-progress-track">
+                  <div class="skill-progress-bar" style="width: 80%;"></div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
       </div>
+
+
     </section>
 
 
@@ -694,8 +905,8 @@
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="projects-data.js?v=5.0"></script>
-  <script src="certificates-data.js?v=2.1"></script>
-  <script src="script.js?v=13.0"></script>
+  <script src="certificates-data.js?v=2.2"></script>
+  <script src="script.js?v=14.0"></script>
 </body>
 
 </html>
